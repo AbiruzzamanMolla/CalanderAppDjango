@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from myapp.models import Enrty
 
-# Create your views here.
+
+def index(request):
+    entries = Enrty.objects.all()
+    return render(request, 'myapp/index.html', {'entries': entries})
