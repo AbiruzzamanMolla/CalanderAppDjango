@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calnader App - Django Learnig Project</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> {% load static %}
+  {% load static %}
+  <link rel="shortcut icon" href="{% static 'myapp/icons/favicon.ico' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'myapp/css/booststrap.css' %}">
   <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
