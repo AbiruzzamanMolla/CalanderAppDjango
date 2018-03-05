@@ -10,10 +10,16 @@
   <link rel="shortcut icon" href="{% static 'myapp/icons/favicon.ico' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'myapp/css/booststrap.css' %}">
   <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
   {% block content %} {% endblock %}
+  <script src="{% static 'myapp/js/calander.js' %}"></script>
+
+  <script>
+    var csrf_token = '{{ csrf_token }}';
+  </script>
 </body>
 
 </html>
