@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %} {% block content %}
+<div class="page-center container form-group" align="center" style="padding: 200px;">
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Sign Up</h1>
+    </div>
+    <div class="col-lg-8">
+      <button onclick="window.location='{% url 'index' %}'" class="text-right pull-right btn btn-success">Go Back</button>
+    </div>
+  </div>
+  <br>
+  <form method="POST">
+    {% csrf_token %} {% for field in form %} {{ field.errors }}
+    <label>{{ field.label }}</label>
+    <input type="{% if 'password' in field.name %}password{% else %}input{% endif %}" placeholder="{{ form.label }}" name="{{ field.name }}" class="form-control" /> {% endfor %}
+    <br>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <br>
+    <br>
+    <p>Already Register?
+      <a href="/login">Login</a>
+    </p>
+  </form>
+</div>
+{%endblock%}
